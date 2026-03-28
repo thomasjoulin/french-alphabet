@@ -49,16 +49,53 @@
         .container {
             flex: 1;
             display: grid;
-            grid-template-columns: repeat(4, auto);
-            gap: clamp(6px, 2vmin, 15px);
-            padding: 10px;
+            --gap: clamp(6px, 2vmin, 15px);
+            --grid-h: calc(100dvh - 80px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+            grid-template-columns: repeat(4, minmax(0, calc((var(--grid-h) - 6 * var(--gap)) / 7)));
+            gap: var(--gap);
+            padding: 0;
             align-content: center;
             justify-content: center;
         }
 
+        /* 5 columns — slightly wider portrait */
+        @media (min-aspect-ratio: 2/3) {
+            .container {
+                grid-template-columns: repeat(5, minmax(0, calc((var(--grid-h) - 5 * var(--gap)) / 6)));
+            }
+        }
+
+        /* 6 columns — near-square screens */
+        @media (min-aspect-ratio: 5/6) {
+            .container {
+                grid-template-columns: repeat(6, minmax(0, calc((var(--grid-h) - 4 * var(--gap)) / 5)));
+            }
+        }
+
+        /* 7 columns — landscape */
+        @media (min-aspect-ratio: 5/4) {
+            .container {
+                grid-template-columns: repeat(7, minmax(0, calc((var(--grid-h) - 3 * var(--gap)) / 4)));
+            }
+        }
+
+        /* 9 columns — wide landscape */
+        @media (min-aspect-ratio: 2/1) {
+            .container {
+                grid-template-columns: repeat(9, minmax(0, calc((var(--grid-h) - 2 * var(--gap)) / 3)));
+            }
+        }
+
+        /* 13 columns — ultra-wide */
+        @media (min-aspect-ratio: 4/1) {
+            .container {
+                grid-template-columns: repeat(13, minmax(0, calc((var(--grid-h) - var(--gap)) / 2)));
+            }
+        }
+
         .letter-btn {
             aspect-ratio: 1;
-            width: clamp(50px, 13vmin, 120px);
+            width: 100%;
             font-size: clamp(1.2rem, 4vmin, 2.5rem);
             font-weight: bold;
             border: none;
@@ -71,26 +108,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        /* 5 columns for medium screens */
-        @media (min-aspect-ratio: 3/4) {
-            .container {
-                grid-template-columns: repeat(5, auto);
-            }
-            .letter-btn {
-                width: clamp(50px, 13vmin, 110px);
-            }
-        }
-
-        /* 6 columns for wider screens */
-        @media (min-aspect-ratio: 4/5) and (min-width: 500px) {
-            .container {
-                grid-template-columns: repeat(6, auto);
-            }
-            .letter-btn {
-                width: clamp(50px, 13vmin, 120px);
-            }
         }
 
         .letter-btn:hover {
