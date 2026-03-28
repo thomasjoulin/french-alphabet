@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Alphabet Français</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IGZpbGw9IiMwMDIzOTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjIiLz48cmVjdCBmaWxsPSIjZmZmIiB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIi8+PHJlY3QgZmlsbD0iI2VkMjkzOSIgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIvPjwvc3ZnPg==">
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjxyZWN0IGZpbGw9IiMwMDIzOTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjIiLz48cmVjdCBmaWxsPSIjZmZmIiB4PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIyIi8+PHJlY3QgZmlsbD0iI2VkMjkzOSIgeD0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMiIvPjwvc3ZnPg==">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAECElEQVR4nO3SQRECQQDEwPPCCwkIRSYaOBMDeWynKg76uh7v70mf1uf5OuqrBgb0b6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgQEN9LQaGNBAT6uBAQ30tBoY0EBPq4EBDfS0GhjQQE+rgf37G/fqvfAzJ5llAAAAAElFTkSuQmCC">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Alphabet">
@@ -23,6 +23,10 @@
             height: 100vh;
             height: 100dvh;
             padding: 10px;
+            padding-top: calc(10px + env(safe-area-inset-top));
+            padding-bottom: calc(10px + env(safe-area-inset-bottom));
+            padding-left: calc(10px + env(safe-area-inset-left));
+            padding-right: calc(10px + env(safe-area-inset-right));
             display: flex;
             flex-direction: column;
             overflow: hidden;
